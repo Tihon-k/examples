@@ -1,7 +1,7 @@
 package Ex9;
 
 public class Box extends Shape {
-    double box = 20;
+    double box = 200;
     double n;
 
 
