@@ -4,20 +4,22 @@ public class Cylinder extends Shape implements Square {
     private double height;
     private double radius;
 
-    public double getHeight() {
-        return height;
-    }
+
 
     public void setHeight(double height) {
         this.height = height;
     }
 
-    public double getRadius() {
-        return radius;
+    public double getHeight() {
+        return height;
     }
 
     public void setRadius(double radius) {
         this.radius = radius;
+    }
+
+    public double getRadius() {
+        return radius;
     }
 
     @Override

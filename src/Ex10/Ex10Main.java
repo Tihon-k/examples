@@ -1,27 +1,41 @@
 package Ex10;
 
-public class Ex10Main extends Shape {
-    static double u;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
+public class Ex10Main extends Shape implements Comparable, Square {
     public static void main(String[] args) {
-
         Box box = new Box();
-        Ball ball = new Ball();
-        Cylinder cylinder = new Cylinder();
-        Pyramid pyramid = new Pyramid();
+        double[] ball1 = box.setBall();
+        double ballSquare = ball1[1];
 
-        cylinder.setHeight(3);
-        cylinder.setRadius(2);
-        ball.setRadius(0);
-        pyramid.setSide(4);
-        pyramid.setHeight(2);
+        double[] pyramid1 = box.setPyramid();
+        double pyramidSquare = pyramid1[2];
 
-        ball.setBallSquare(ball.square());
-        cylinder.setCylinderSquare(cylinder.square());
-        pyramid.setPyramidSquare(pyramid.square());
+        double[] cylinder1 = box.setCylinder();
+        double cylinderSquare = cylinder1[2];
+
+        List<Double> list = new ArrayList<>();
+        list.add(ballSquare);
+        list.add(pyramidSquare);
+        list.add(cylinderSquare);
+
+        Collections.sort(list);
+
+
+        for (double square: list) {
+            System.out.println("какое-то место по тяжести " +square);
+            //Интересно, а как сделать нумерацию в array list?
+            //Пытался найти не нашел.....
+        }
 
         box.foo();
     }
 
 
+    @Override
+    public int compareTo(Object o) {
+        return 0;
+    }
 }
