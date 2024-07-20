@@ -6,6 +6,7 @@ public class Pyramid extends Shape{
 
 
     public double pyramidSquare(){
+        //Трехгранная пирамида*
         double pyramid = side * (side + 2*height);
         return pyramid;
     }
