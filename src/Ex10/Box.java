@@ -10,28 +10,18 @@ public class Box extends Shape implements Comparable {
         this.volume = boxSize;
     }
 
-    Ball ball = new Ball();
-    Cylinder cylinder = new Cylinder();
-    Pyramid pyramid = new Pyramid();
-
 
     public boolean add(Shape shape) {
-        double n  = volume - (ball.volume + cylinder.volume + pyramid.volume);
+        this.volume  = this.volume - shape.getVolume();
 
         List<Double> list = new ArrayList<>();
-        list.add(ball.volume);
-        list.add(cylinder.volume);
-        list.add(pyramid.volume);
 
         Collections.sort(list);
 
-        if (n >= 0) {
-            System.out.println(list);
-            System.out.println(n);
+        if (this.volume >= 0) {
             return true;
-        } else {
-            System.out.println(list);
-            return false;}
+        } else
+            return false;
     }
 
 
