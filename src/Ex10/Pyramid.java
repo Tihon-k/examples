@@ -1,29 +1,13 @@
 package Ex10;
 
-public class Pyramid extends Shape implements Square {
-    private double side;
-    private double height;
+public class Pyramid extends Shape implements GetVolume {
+    private double side = 5;
+    private double height = 6;
 
 
-    public double getSide() {
-        return side;
-    }
-
-    public void setSide(double side) {
-        this.side = side;
-    }
-
-    public double getHeight() {
-        return height;
-    }
-
-    public void setHeight(double height) {
-        this.height = height;
-    }
-
-    @Override
-    public double square() {
-        double pyramid = getSide() * (getSide() + 2 * getHeight());
-        return pyramid;
+    public double getVolume(){
+        //Трехгранная пирамида*
+        volume = height * Math.pow(side,2) * Math.sqrt(3) / 4;
+        return volume;
     }
 }

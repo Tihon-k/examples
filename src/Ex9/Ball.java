@@ -1,9 +1,11 @@
 package Ex9;
 
 public class Ball extends SolidORevolution{
-    public double ballSquare(){
+    //packagePrivate
+    public double getVolume(){
+
         setRadius(1);
-        double ball = 4*Math.PI* Math.pow(getRadius(),2);
-        return ball;
+        volume = 3/4*Math.PI* Math.pow(getRadius(),4);
+        return volume;
     }
 }

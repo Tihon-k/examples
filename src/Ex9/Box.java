@@ -1,32 +1,22 @@
 package Ex9;
 
 public class Box extends Shape {
-    double box = 200;
-    double n;
 
 
-
-
-    public double add() {
-        Shape shape = new Shape();
-        n = shape.square();
-        box = box - n;
-        return box;
-
+    public Box(double boxSize) {
+        this.volume = boxSize;
     }
 
+    Ball ball = new Ball();
+    Cylinder cylinder = new Cylinder();
+    Pyramid pyramid = new Pyramid();
 
-    public void foo(){
-        Box box = new Box();
-        double m = box.add();
-        if (m>=0){
-            System.out.println(m);
-        } else {
-            System.out.println(false);
-        }
+
+    public boolean add(Shape shape) {
+        double n  = volume - (ball.volume + cylinder.volume + pyramid.volume);
+        if (n >= 0) {
+            System.out.println(n);
+            return true;
+        } else return false;
     }
-
-
-
-
 }

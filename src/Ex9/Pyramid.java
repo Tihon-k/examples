@@ -5,9 +5,9 @@ public class Pyramid extends Shape{
     private double height = 6;
 
 
-    public double pyramidSquare(){
+    public double getVolume(){
         //Трехгранная пирамида*
-        double pyramid = side * (side + 2*height);
-        return pyramid;
+        volume = height * Math.pow(side,2) * Math.sqrt(3) / 4;
+        return volume;
     }
 }

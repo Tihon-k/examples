@@ -1,22 +1,44 @@
 package Ex10;
 
-public class Box extends Shape {
-    double box = 200;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-    public double add() {
-        box = box - square();
-        return box;
+public class Box extends Shape implements Comparable {
 
+    public Box(double boxSize) {
+        this.volume = boxSize;
     }
 
-    public void foo() {
-        Box box = new Box();
-        double m = box.add();
-        if (m >= 0) {
-            System.out.println("свободно - " +m);
+    Ball ball = new Ball();
+    Cylinder cylinder = new Cylinder();
+    Pyramid pyramid = new Pyramid();
+
+
+    public boolean add(Shape shape) {
+        double n  = volume - (ball.volume + cylinder.volume + pyramid.volume);
+
+        List<Double> list = new ArrayList<>();
+        list.add(ball.volume);
+        list.add(cylinder.volume);
+        list.add(pyramid.volume);
+
+        Collections.sort(list);
+
+        if (n >= 0) {
+            System.out.println(list);
+            System.out.println(n);
+            return true;
         } else {
-            System.out.println(false);
-            System.out.println("Не поместилось - " +-m);
-        }
+            System.out.println(list);
+            return false;}
+    }
+
+
+
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }

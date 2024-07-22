@@ -1,6 +1,6 @@
-package Ex9;
+package Ex10;
 
-public class SolidORevolution extends Shape {
+public abstract class SolidORevolution extends Shape {
     private double radius;
 
     protected double getRadius() {
