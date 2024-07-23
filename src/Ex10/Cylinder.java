@@ -11,7 +11,6 @@ public class Cylinder extends SolidORevolution {
 
     @Override
     public double getVolume(){
-        volume = height * Math.PI * Math.pow(getRadius(),2);
-        return volume;
+        return height * Math.PI * Math.pow(getRadius(),2);
     }
 }

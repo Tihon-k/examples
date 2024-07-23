@@ -12,7 +12,6 @@ public class Pyramid extends Shape {
     @Override
     public double getVolume(){
         //Трехгранная пирамида*
-        volume = height * Math.pow(side,2) * Math.sqrt(3) / 4;
-        return volume;
+        return height * Math.pow(side,2) * Math.sqrt(3) / 4;
     }
 }

@@ -1,10 +1,6 @@
 package Ex10;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-public class Box extends Shape implements Comparable {
+public class Box extends Shape {
 
     public Box(double boxSize) {
         this.volume = boxSize;
@@ -12,23 +8,11 @@ public class Box extends Shape implements Comparable {
 
 
     public boolean add(Shape shape) {
-        this.volume  = this.volume - shape.getVolume();
-
-        List<Double> list = new ArrayList<>();
-
-        Collections.sort(list);
+        this.volume = this.volume - shape.getVolume();
 
         if (this.volume >= 0) {
             return true;
         } else
             return false;
-    }
-
-
-
-
-    @Override
-    public int compareTo(Object o) {
-        return 0;
     }
 }

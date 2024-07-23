@@ -8,7 +8,6 @@ public class Ball extends SolidORevolution {
 
     @Override
     public double getVolume(){
-        volume = 3/4*Math.PI* Math.pow(getRadius(),4);
-        return volume;
+        return 3/4*Math.PI* Math.pow(getRadius(),4);
     }
 }
