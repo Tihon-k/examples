@@ -1,5 +1,5 @@
 package Ex11;
 
 public interface Converter {
-    public double getConverter(double t);
+    public double converter(double t);
 }
