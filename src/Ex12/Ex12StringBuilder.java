@@ -1,24 +1,28 @@
 package Ex12;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Ex12StringBuilder {
 
     public static void main(String[] args) {
-        Text text = new Text();
+
         StringBuilder sb = new StringBuilder();
 
-        text.builder(sb,"abra-cadabra");
-        text.builder(sb,"la-la-la");
-        text.builder(sb,"13213");
+        Reciver reciver = new Reciver();
+        reciver.builder(sb, "abra-cadabra");
+        reciver.builder(sb, "bla-bla");
+        reciver.builder(sb, "da-da");
 
-        text.undo(sb);
-        text.undo(sb);
+        Command undo = new CommandImp(reciver);
 
+        Invoker invoker = new Invoker(undo);
+
+        invoker.turnUndo();
         System.out.println(sb);
 
+        invoker.turnUndo();
+        System.out.println(sb);
 
+        invoker.turnUndo();
+        System.out.println(sb + "---");
     }
 
 }
