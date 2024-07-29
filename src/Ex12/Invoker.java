@@ -1,15 +1,15 @@
 package Ex12;
 
-public class Invoker {
+public class Invoker implements Command {
 
-    private Command turnBack;
+    private StringBuilder theStringBuilder;
 
-    public Invoker(Command undo){
-        this.turnBack = undo;
+    public Invoker(StringBuilder stringBuilder){
+        this.theStringBuilder = stringBuilder;
     }
 
-    public void turnUndo(){
-        turnBack.undo();
+    @Override
+    public void undo() {
+        theStringBuilder.undo();
     }
-
 }

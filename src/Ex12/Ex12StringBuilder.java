@@ -4,25 +4,21 @@ public class Ex12StringBuilder {
 
     public static void main(String[] args) {
 
-        StringBuilder sb = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("abra-cadabra");
+        stringBuilder.append(" bla-bla");
+        stringBuilder.append(" da-da");
 
-        Reciver reciver = new Reciver();
-        reciver.builder(sb, "abra-cadabra");
-        reciver.builder(sb, "bla-bla");
-        reciver.builder(sb, "da-da");
+        Invoker invoker = new Invoker(stringBuilder);
 
-        Command undo = new CommandImp(reciver);
+        invoker.undo();
+        System.out.println(stringBuilder.sb);
 
-        Invoker invoker = new Invoker(undo);
+        invoker.undo();
+        System.out.println(stringBuilder.sb);
 
-        invoker.turnUndo();
-        System.out.println(sb);
-
-        invoker.turnUndo();
-        System.out.println(sb);
-
-        invoker.turnUndo();
-        System.out.println(sb + "---");
+        invoker.undo();
+        System.out.println(stringBuilder.sb + "---");
     }
 
 }
