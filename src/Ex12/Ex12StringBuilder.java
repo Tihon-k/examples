@@ -4,21 +4,21 @@ public class Ex12StringBuilder {
 
     public static void main(String[] args) {
 
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("abra-cadabra");
-        stringBuilder.append(" bla-bla");
-        stringBuilder.append(" da-da");
+        UndoableStringBuilder undoableStringBuilder = new UndoableStringBuilder();
+        undoableStringBuilder.append("abra-cadabra");
+        undoableStringBuilder.append(" bla-bla");
+        undoableStringBuilder.append(" da-da");
 
-        Invoker invoker = new Invoker(stringBuilder);
 
-        invoker.undo();
-        System.out.println(stringBuilder.sb);
 
-        invoker.undo();
-        System.out.println(stringBuilder.sb);
+        undoableStringBuilder.undo();
+        System.out.println(undoableStringBuilder.sb);
 
-        invoker.undo();
-        System.out.println(stringBuilder.sb + "---");
+        undoableStringBuilder.undo();
+        System.out.println(undoableStringBuilder.sb);
+
+        undoableStringBuilder.undo();
+        System.out.println(undoableStringBuilder.sb + "---");
     }
 
 }

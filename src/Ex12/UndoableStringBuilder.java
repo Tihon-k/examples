@@ -3,7 +3,7 @@ package Ex12;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StringBuilder {
+public class UndoableStringBuilder {
 
     List<String> historyList = new ArrayList();
 
