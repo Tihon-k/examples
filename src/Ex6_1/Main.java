@@ -5,11 +5,20 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Object[] ob = new Object[2];
-        ob[1] = 1;
-        IsNullFilter isNullFilter = new IsNullFilter();
+        Object[] ob = new Object[4];
+        ob[0] = 1;
+        ob[2] = 2;
+        for (int b = 0; b<ob.length; b++){
+            System.out.println(ob[b]);
+        }
 
-        filter(ob, isNullFilter);
+        IsNullFilter isNullFilter = new IsNullFilter();
+        for (Object o : ob = filter(ob, isNullFilter)) {
+        }
+
+        for (int i = 0; i <ob.length; i++){
+            System.out.println(ob[i]);
+        }
     }
 
 
@@ -20,16 +29,15 @@ public class Main {
 
             boolean answer = filterInterface.apply(element);
 
-            if (answer == false) {
+            if (!answer) {
                 list.add(element);
             }
         }
 
-        Object[] obj = new Object[list.size()];
+        Object[] obj = null;
 
-        for (int n = 0; n < list.size(); n++) {
-            obj[n] = list.get(n);
-        }
+        obj = list.toArray(new Object[list.size()]);
+
         return obj;
 
     }
